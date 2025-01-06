@@ -98,26 +98,26 @@ stats_globaux = {
 }
 # Dictionnaire des noms et prénoms
 noms_prenoms = {
-    "KIM": ("Hae Won", "Kim"),
-    "PRY": ("Andreas", "Pryviat"),
-    "MED": ("Léo", "Medo"),
-    "NIA": ("Lewis", "Niamate"),
-    "KOV": ("Riin", "Kovac"),
-    "AIE": ("Allessandro", "Aiello"),
-    "MAK": ("Nicholas", "Makkinen"),
-    "ROS": ("Oscar", "Rosberg"),
-    "LFE": ("Luis", "Fernand"),
-    "TFE": ("Tom", "Fernandez"),
-    "CON": ("Noah", "Connor"),
-    "DIA": ("Zachary", "Diaz"),
-    "HUL": ("Justin", "Huler"),
-    "BEL": ("Marc-Antoine", "Belmondini"),
-    "PRO": ("Alain", "Proviste"),
-    "NUN": ("Rio", "Nuno"),
-    "BIL": ("Jakie", "Biloutte"),
-    "NIT": ("Trivality", "Nitrox"),
-    "END": ("Félix", "Ender"),
-    "THE": ("Tome", "Théo"),
+    "KIM": ("Hae Won", "Kim", "Femme", "F1"),
+    "PRY": ("Andreas", "Pryviat", "Homme", "F1"),
+    "MED": ("Léo", "Medo", "Homme", "F1"),
+    "NIA": ("Lewis", "Niamate", "Homme", "F1"),
+    "KOV": ("Riin", "Kovac", "Homme", "F1"),
+    "AIE": ("Allessandro", "Aiello", "Homme", "F1"),
+    "MAK": ("Nicholas", "Makkinen", "Homme", "F1"),
+    "ROS": ("Oscar", "Rosberg", "Homme", "F1"),
+    "LFE": ("Luis", "Fernand", "Homme", "F1"),
+    "TFE": ("Tom", "Fernandez", "Homme", "F1"),
+    "CON": ("Noah", "Connor", "Homme", "F1"),
+    "DIA": ("Zachary", "Diaz", "Homme", "F1"),
+    "HUL": ("Justin", "Huler", "Homme", "F1"),
+    "BEL": ("Marc-Antoine", "Belmondini", "Homme", "F1"),
+    "PRO": ("Alain", "Proviste", "Homme", "F1"),
+    "NUN": ("Rio", "Nuno", "Homme", "F1"),
+    "BIL": ("Jakie", "Biloutte", "Homme", "F1"),
+    "NIT": ("Trivality", "Nitrox", "Homme", "F1"),
+    "END": ("Félix", "Ender", "Homme", "F1"),
+    "THE": ("Tome", "Théo", "Homme", "F1"),
 }
 
 @bot.command()
@@ -184,9 +184,9 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
 
     # Récupération du prénom et du nom
     if pronom in noms_prenoms:
-        prenom, nom = noms_prenoms[pronom]
+        prenom, nom, sex, catégorie = noms_prenoms[pronom]
     else:
-        prenom, nom = "Inconnu", "Inconnu"
+        prenom, nom, sex, catégorie = "Inconnu", "Inconnu"
 
     # Récupération des stats
     stats = stats_globaux[pronom]
@@ -196,6 +196,8 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
 **DRIVER FICHE**
 
 Nom pilote : {prenom} {nom}
+Sexe : {sexe}
+Catégorie : {catégorie}
 
 --------------------------
 
