@@ -196,7 +196,7 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
 **DRIVER FICHE**
 
 Nom pilote : {prenom} {nom}
-Sexe : {sexe}
+Sexe : {sex}
 Catégorie : {catégorie}
 
 --------------------------
