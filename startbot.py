@@ -96,6 +96,29 @@ stats_globaux = {
     "END": {"con": 86.0, "tra": 90.0, "men": 86.0, "réa": 86.0, "pré": 86.4, "nst": 85.8, "ene": 85.4},
     "THE": {"con": 85.0, "tra": 86.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 84.8, "ene": 85.0},
 }
+# Dictionnaire des noms et prénoms
+noms_prenoms = {
+    "KIM": ("Hae Won", "Kim"),
+    "PRY": ("Andreas", "Pryviat"),
+    "MED": ("Léo", "Medo"),
+    "NIA": ("Lewis", "Niamate"),
+    "KOV": ("Riin", "Kovac"),
+    "AIE": ("Allessandro", "Aiello"),
+    "MAK": ("Nicholas", "Makkinen"),
+    "ROS": ("Oscar", "Rosberg"),
+    "LFE": ("Luis", "Fernand"),
+    "TFE": ("Tom", "Fernandez"),
+    "CON": ("Noah", "Connor"),
+    "DIA": ("Zachary", "Diaz"),
+    "HUL": ("Justin", "Huler"),
+    "BEL": ("Marc-Antoine", "Belmondini"),
+    "PRO": ("Alain", "Proviste"),
+    "NUN": ("Rio", "Nuno"),
+    "BIL": ("Jakie", "Biloutte"),
+    "NIT": ("Trivality", "Nitrox"),
+    "END": ("Félix", "Ender"),
+    "THE": ("Tome", "Théo"),
+}
 
 @bot.command()
 async def amélioration(ctx, option: int, pronom: str, *categories):
@@ -155,51 +178,9 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
             stats[categories[0]] += 0.4
         else:
             await ctx.send("Option ou nombre de catégories invalides. Veuillez vérifier votre commande.")
-            return
-        
-        # Afficher les statistiques mises à jour
-        
-        embed = discord.Embed(title=f"Statistiques mises à jour pour {pronom.capitalize()}", color=0x00ffcc)
-        for key, value in stats.items():
-            embed.add_field(name=key, value=f"{value:.1f}", inline=False)
-        await ctx.send(f"{ctx}fiche {pronom.capitalize}" )
 
     except ValueError:
         await ctx.send("Une erreur est survenue. Assurez-vous que toutes les données fournies sont correctes.")
-
-# Dictionnaire des noms et prénoms
-noms_prenoms = {
-    "KIM": ("Hae Won", "Kim"),
-    "PRY": ("Andreas", "Pryviat"),
-    "MED": ("Léo", "Medo"),
-    "NIA": ("Lewis", "Niamate"),
-    "KOV": ("Riin", "Kovac"),
-    "AIE": ("Allessandro", "Aiello"),
-    "MAK": ("Nicholas", "Makkinen"),
-    "ROS": ("Oscar", "Rosberg"),
-    "LFE": ("Luis", "Fernand"),
-    "TFE": ("Tom", "Fernandez"),
-    "CON": ("Noah", "Connor"),
-    "DIA": ("Zachary", "Diaz"),
-    "HUL": ("Justin", "Huler"),
-    "BEL": ("Marc-Antoine", "Belmondini"),
-    "PRO": ("Alain", "Proviste"),
-    "NUN": ("Rio", "Nuno"),
-    "BIL": ("Jakie", "Biloutte"),
-    "NIT": ("Trivality", "Nitrox"),
-    "END": ("Félix", "Ender"),
-    "THE": ("Tome", "Théo"),
-}
-
-@bot.command()
-async def fiche(ctx, pronom: str):
-    """
-    Affiche la fiche détaillée d'un pilote avec ses statistiques formatées.
-    """
-    pronom = pronom.upper()
-    if pronom not in stats_globaux:
-        await ctx.send("Pronom non valide. Veuillez entrer un pronom valide.")
-        return
 
     # Récupération du prénom et du nom
     if pronom in noms_prenoms:
