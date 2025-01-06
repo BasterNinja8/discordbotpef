@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
 import discord
 from discord.ext import commands
 from connect import connect
@@ -70,8 +71,8 @@ async def transformer(ctx, *notes):
 # Stockage des statistiques par utilisateur
 user_stats = {}
 
-# Stockage des statistiques par utilisateur
-user_stats = {}
+# Dictionnaire pour suivre les dernières utilisations de la commande par utilisateur
+derniere_utilisation = {}
 
 # Initialisation des statistiques globales pour chaque pronom
 stats_globaux = {
@@ -122,6 +123,25 @@ noms_prenoms = {
 
 @bot.command()
 async def amélioration(ctx, option: int, pronom: str, *categories):
+
+    utilisateur_id = ctx.author.id
+    maintenant = datetime.now()
+
+    # Vérifier si l'utilisateur a déjà utilisé la commande aujourd'hui
+    if utilisateur_id in derniere_utilisation:
+        derniere_date = derniere_utilisation[utilisateur_id]
+        if maintenant - derniere_date < timedelta(days=1):
+            temps_restant = timedelta(days=1) - (maintenant - derniere_date)
+            heures, secondes = divmod(temps_restant.total_seconds(), 3600)
+            minutes, _ = divmod(secondes, 60)
+            await ctx.send(
+                f"Vous avez déjà utilisé cette commande aujourd'hui ! Vous pourrez réessayer dans {int(heures)}h {int(minutes)}m."
+            )
+            return
+
+    # Enregistrer la date d'utilisation actuelle pour cet utilisateur
+    derniere_utilisation[utilisateur_id] = maintenant
+    
     """
     Améliore les statistiques d'un pronom spécifique selon l'option choisie.
     """
