@@ -122,7 +122,7 @@ noms_prenoms = {
 }
 
 @bot.command()
-async def amélioration(ctx, option: int, pronom: str, *categories):
+async def up(ctx, option: int, pronom: str, *categories):
 
     user_id = ctx.author.id
     current_date = datetime.now().date()
