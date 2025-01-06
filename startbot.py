@@ -162,33 +162,33 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
         embed = discord.Embed(title=f"Statistiques mises à jour pour {pronom.capitalize()}", color=0x00ffcc)
         for key, value in stats.items():
             embed.add_field(name=key, value=f"{value:.1f}", inline=False)
-        await ctx.send(embed=embed)
+        await ctx.send(f"{ctx}fiche {pronom.capitalize}" )
 
     except ValueError:
         await ctx.send("Une erreur est survenue. Assurez-vous que toutes les données fournies sont correctes.")
 
 # Dictionnaire des noms et prénoms
 noms_prenoms = {
-    "KIM": ("Kim", "Jung"),
-    "PRY": ("Pryce", "Lewis"),
-    "MED": ("Medhi", "Aziz"),
-    "NIA": ("Nia", "Smith"),
-    "KOV": ("Kovalev", "Ivan"),
-    "AIE": ("Aiden", "Clark"),
-    "MAK": ("Makoto", "Yamada"),
-    "ROS": ("Rose", "Evans"),
-    "LFE": ("Léa", "Ferreira"),
-    "TFE": ("Theo", "Fernandez"),
-    "CON": ("Connor", "James"),
-    "DIA": ("Diana", "Prince"),
-    "HUL": ("Hulk", "Banner"),
-    "BEL": ("Bella", "Thorne"),
-    "PRO": ("Professor", "Xavier"),
-    "NUN": ("Nunzia", "Rossi"),
-    "BIL": ("Billy", "Kid"),
-    "NIT": ("Nitro", "Speed"),
-    "END": ("Ender", "Wiggin"),
-    "THE": ("Theo", "Gray"),
+    "KIM": ("Hae Won", "Kim"),
+    "PRY": ("Andreas", "Pryviat"),
+    "MED": ("Léo", "Medo"),
+    "NIA": ("Lewis", "Niamate"),
+    "KOV": ("Riin", "Kovac"),
+    "AIE": ("Allessandro", "Aiello"),
+    "MAK": ("Nicholas", "Makkinen"),
+    "ROS": ("Oscar", "Rosberg"),
+    "LFE": ("Luis", "Fernand"),
+    "TFE": ("Tom", "Fernandez"),
+    "CON": ("Noah", "Connor"),
+    "DIA": ("Zachary", "Diaz"),
+    "HUL": ("Justin", "Huler"),
+    "BEL": ("Marc-Antoine", "Belmondini"),
+    "PRO": ("Alain", "Proviste"),
+    "NUN": ("Rio", "Nuno"),
+    "BIL": ("Jakie", "Biloutte"),
+    "NIT": ("Trivality", "Nitrox"),
+    "END": ("Félix", "Ender"),
+    "THE": ("Tome", "Théo"),
 }
 
 @bot.command()
