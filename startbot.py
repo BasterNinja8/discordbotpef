@@ -71,8 +71,8 @@ async def transformer(ctx, *notes):
 # Stockage des statistiques par utilisateur
 user_stats = {}
 
-# Dictionnaire pour suivre les dernières utilisations de la commande par utilisateur
-derniere_utilisation = {}
+# Stockage des statistiques par utilisateur et dernière utilisation
+user_last_command_date = {}
 
 # Initialisation des statistiques globales pour chaque pronom
 stats_globaux = {
@@ -99,48 +99,43 @@ stats_globaux = {
 }
 # Dictionnaire des noms et prénoms
 noms_prenoms = {
-    "KIM": ("Hae Won", "Kim", "Femme", ":1FORMULA:"),
-    "PRY": ("Andreas", "Pryviat", "Homme", ":1FORMULA:"),
-    "MED": ("Léo", "Medo", "Homme", ":1FORMULA:"),
-    "NIA": ("Lewis", "Niamate", "Homme", ":1FORMULA:"),
-    "KOV": ("Riin", "Kovac", "Homme", ":1FORMULA:"),
-    "AIE": ("Allessandro", "Aiello", "Homme", ":1FORMULA~1:"),
-    "MAK": ("Nicholas", "Makkinen", "Homme", ":1FORMULA:"),
-    "ROS": ("Oscar", "Rosberg", "Homme", ":1FORMULA:"),
-    "LFE": ("Luis", "Fernand", "Homme", ":1FORMULA:"),
-    "TFE": ("Tom", "Fernandez", "Homme", ":1FORMULA:"),
-    "CON": ("Noah", "Connor", "Homme", ":1FORMULA:"),
-    "DIA": ("Zachary", "Diaz", "Homme", ":1FORMULA:"),
-    "HUL": ("Justin", "Huler", "Homme", ":1FORMULA:"),
-    "BEL": ("Marc-Antoine", "Belmondini", "Homme", ":1FORMULA:"),
-    "PRO": ("Alain", "Proviste", "Homme", ":1FORMULA:"),
-    "NUN": ("Rio", "Nuno", "Homme", ":1FORMULA:"),
-    "BIL": ("Jakie", "Biloutte", "Homme", ":1FORMULA:"),
-    "NIT": ("Trivality", "Nitrox", "Homme", ":1FORMULA:"),
-    "END": ("Félix", "Ender", "Homme", ":1FORMULA:"),
-    "THE": ("Tome", "Théo", "Homme", ":1FORMULA:"),
+    "KIM": ("Hae Won", "Kim", "Femme", "Formula One"),
+    "PRY": ("Andreas", "Pryviat", "Homme", "Formula One"),
+    "MED": ("Léo", "Medo", "Homme", "Formula One"),
+    "NIA": ("Lewis", "Niamate", "Homme", "Formula One"),
+    "KOV": ("Riin", "Kovac", "Homme", "Formula One"),
+    "AIE": ("Allessandro", "Aiello", "Homme", "Formula One"),
+    "MAK": ("Nicholas", "Makkinen", "Homme", "Formula One"),
+    "ROS": ("Oscar", "Rosberg", "Homme", "Formula One"),
+    "LFE": ("Luis", "Fernand", "Homme", "Formula One"),
+    "TFE": ("Tom", "Fernandez", "Homme", "Formula One"),
+    "CON": ("Noah", "Connor", "Homme", "Formula One"),
+    "DIA": ("Zachary", "Diaz", "Homme", "Formula One"),
+    "HUL": ("Justin", "Huler", "Homme", "Formula One"),
+    "BEL": ("Marc-Antoine", "Belmondini", "Homme", "Formula One"),
+    "PRO": ("Alain", "Proviste", "Homme", "Formula One"),
+    "NUN": ("Rio", "Nuno", "Homme", "Formula One"),
+    "BIL": ("Jakie", "Biloutte", "Homme", "Formula One"),
+    "NIT": ("Trivality", "Nitrox", "Homme", "Formula One"),
+    "END": ("Félix", "Ender", "Homme", "Formula One"),
+    "THE": ("Tome", "Théo", "Homme", "Formula One"),
 }
 
 @bot.command()
 async def amélioration(ctx, option: int, pronom: str, *categories):
 
-    utilisateur_id = ctx.author.id
-    maintenant = datetime.now()
+    user_id = ctx.author.id
+    current_date = datetime.now().date()
 
     # Vérifier si l'utilisateur a déjà utilisé la commande aujourd'hui
-    if utilisateur_id in derniere_utilisation:
-        derniere_date = derniere_utilisation[utilisateur_id]
-        if maintenant - derniere_date < timedelta(days=1):
-            temps_restant = timedelta(days=1) - (maintenant - derniere_date)
-            heures, secondes = divmod(temps_restant.total_seconds(), 3600)
-            minutes, _ = divmod(secondes, 60)
-            await ctx.send(
-                f"Vous avez déjà utilisé cette commande aujourd'hui ! Vous pourrez réessayer dans {int(heures)}h {int(minutes)}m."
-            )
+    if user_id in user_last_command_date:
+        last_date = user_last_command_date[user_id]
+        if last_date == current_date:
+            await ctx.send("Vous avez déjà utilisé la commande /amélioration aujourd'hui. Revenez demain !")
             return
 
-    # Enregistrer la date d'utilisation actuelle pour cet utilisateur
-    derniere_utilisation[utilisateur_id] = maintenant
+    # Met à jour la date d'utilisation de la commande
+    user_last_command_date[user_id] = current_date
     
     """
     Améliore les statistiques d'un pronom spécifique selon l'option choisie.
@@ -250,7 +245,6 @@ Catégorie : {catégorie}
 ┊→       ENE                    {stats['ene']}
 ┊         energie
 ╰
-    :Fia~1: :peflogo~1:
   ***OFFICIAL STATS***
 
 ------------------------------------------
