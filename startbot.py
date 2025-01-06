@@ -104,7 +104,7 @@ noms_prenoms = {
     "MED": ("Léo", "Medo", "Homme", ":1FORMULA:"),
     "NIA": ("Lewis", "Niamate", "Homme", ":1FORMULA:"),
     "KOV": ("Riin", "Kovac", "Homme", ":1FORMULA:"),
-    "AIE": ("Allessandro", "Aiello", "Homme", ":1FORMULA:"),
+    "AIE": ("Allessandro", "Aiello", "Homme", ":1FORMULA~1:"),
     "MAK": ("Nicholas", "Makkinen", "Homme", ":1FORMULA:"),
     "ROS": ("Oscar", "Rosberg", "Homme", ":1FORMULA:"),
     "LFE": ("Luis", "Fernand", "Homme", ":1FORMULA:"),
@@ -250,8 +250,8 @@ Catégorie : {catégorie}
 ┊→       ENE                    {stats['ene']}
 ┊         energie
 ╰
-    :Fia: :peflogo:
-  OFFICIAL STATS
+    :Fia~1: :peflogo~1:
+  ***OFFICIAL STATS***
 
 ------------------------------------------
 Besoin d’aide ? Merci de faire la commande /aide
