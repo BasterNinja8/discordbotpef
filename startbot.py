@@ -99,26 +99,26 @@ stats_globaux = {
 }
 # Dictionnaire des noms et prénoms
 noms_prenoms = {
-    "KIM": ("Hae Won", "Kim", "Femme", "F1"),
-    "PRY": ("Andreas", "Pryviat", "Homme", "F1"),
-    "MED": ("Léo", "Medo", "Homme", "F1"),
-    "NIA": ("Lewis", "Niamate", "Homme", "F1"),
-    "KOV": ("Riin", "Kovac", "Homme", "F1"),
-    "AIE": ("Allessandro", "Aiello", "Homme", "F1"),
-    "MAK": ("Nicholas", "Makkinen", "Homme", "F1"),
-    "ROS": ("Oscar", "Rosberg", "Homme", "F1"),
-    "LFE": ("Luis", "Fernand", "Homme", "F1"),
-    "TFE": ("Tom", "Fernandez", "Homme", "F1"),
-    "CON": ("Noah", "Connor", "Homme", "F1"),
-    "DIA": ("Zachary", "Diaz", "Homme", "F1"),
-    "HUL": ("Justin", "Huler", "Homme", "F1"),
-    "BEL": ("Marc-Antoine", "Belmondini", "Homme", "F1"),
-    "PRO": ("Alain", "Proviste", "Homme", "F1"),
-    "NUN": ("Rio", "Nuno", "Homme", "F1"),
-    "BIL": ("Jakie", "Biloutte", "Homme", "F1"),
-    "NIT": ("Trivality", "Nitrox", "Homme", "F1"),
-    "END": ("Félix", "Ender", "Homme", "F1"),
-    "THE": ("Tome", "Théo", "Homme", "F1"),
+    "KIM": ("Hae Won", "Kim", "Femme", ":1FORMULA:",
+    "PRY": ("Andreas", "Pryviat", "Homme", ":1FORMULA:"),
+    "MED": ("Léo", "Medo", "Homme", ":1FORMULA:"),
+    "NIA": ("Lewis", "Niamate", "Homme", ":1FORMULA:"),
+    "KOV": ("Riin", "Kovac", "Homme", ":1FORMULA:"),
+    "AIE": ("Allessandro", "Aiello", "Homme", ":1FORMULA:"),
+    "MAK": ("Nicholas", "Makkinen", "Homme", ":1FORMULA:"),
+    "ROS": ("Oscar", "Rosberg", "Homme", ":1FORMULA:"),
+    "LFE": ("Luis", "Fernand", "Homme", ":1FORMULA:"),
+    "TFE": ("Tom", "Fernandez", "Homme", ":1FORMULA:"),
+    "CON": ("Noah", "Connor", "Homme", ":1FORMULA:"),
+    "DIA": ("Zachary", "Diaz", "Homme", ":1FORMULA:"),
+    "HUL": ("Justin", "Huler", "Homme", ":1FORMULA:"),
+    "BEL": ("Marc-Antoine", "Belmondini", "Homme", ":1FORMULA:"),
+    "PRO": ("Alain", "Proviste", "Homme", ":1FORMULA:"),
+    "NUN": ("Rio", "Nuno", "Homme", ":1FORMULA:"),
+    "BIL": ("Jakie", "Biloutte", "Homme", ":1FORMULA:"),
+    "NIT": ("Trivality", "Nitrox", "Homme", ":1FORMULA:"),
+    "END": ("Félix", "Ender", "Homme", ":1FORMULA:"),
+    "THE": ("Tome", "Théo", "Homme", ":1FORMULA:"),
 }
 
 @bot.command()
@@ -213,7 +213,7 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
     note_generale = sum(stats.values()) / len(stats.values())
 
     fiche_message = f"""
-**DRIVER FICHE**
+# **DRIVER FICHE**
 
 Nom pilote : {prenom} {nom}
 Sexe : {sex}
