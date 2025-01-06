@@ -99,7 +99,7 @@ stats_globaux = {
 }
 # Dictionnaire des noms et prénoms
 noms_prenoms = {
-    "KIM": ("Hae Won", "Kim", "Femme", ":1FORMULA:",
+    "KIM": ("Hae Won", "Kim", "Femme", ":1FORMULA:"),
     "PRY": ("Andreas", "Pryviat", "Homme", ":1FORMULA:"),
     "MED": ("Léo", "Medo", "Homme", ":1FORMULA:"),
     "NIA": ("Lewis", "Niamate", "Homme", ":1FORMULA:"),
@@ -254,6 +254,7 @@ Catégorie : {catégorie}
   OFFICIAL STATS
 
 ------------------------------------------
+Besoin d’aide ? Merci de faire la commande /aide
 """
     await ctx.send(fiche_message)
 
