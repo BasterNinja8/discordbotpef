@@ -274,10 +274,10 @@ async def fiche(ctx, pronom: str):
 
     # Construction de la fiche
     fiche_message = f"""
-**DRIVER FICHE**
+# **DRIVER FICHE**
 
 Nom pilote : {prenom} {nom}
-Sexe : {sexe}
+Sexe : {sex}
 Catégorie : {catégorie}
 
 --------------------------
@@ -311,10 +311,10 @@ Catégorie : {catégorie}
 ┊→       ENE                    {stats['ene']}
 ┊         energie
 ╰
-    :Fia: :peflogo:
-  OFFICIAL STATS
+  ***OFFICIAL STATS***
 
 ------------------------------------------
+Besoin d’aide ? Merci de faire la commande /aide
 """
     await ctx.send(fiche_message)
 
