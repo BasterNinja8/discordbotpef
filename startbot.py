@@ -75,26 +75,26 @@ user_stats = {}
 
 # Initialisation des statistiques globales pour chaque pronom
 stats_globaux = {
-    "Hae Won KIM": {"con": 90.0, "tra": 88.2, "men": 88.4, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 88.3},
-    "Andreas PRYVIAT": {"con": 84.8, "tra": 85.0, "men": 83.0, "réa": 85.0, "pré": 84.0, "nst": 85.0, "ene": 85.0},
-    "Léo MEDO": {"con": 88.0, "tra": 88.0, "men": 87.0, "réa": 88.0, "pré": 89.0, "nst": 87.0, "ene": 86.2},
-    "Lewis NIAMATE": {"con": 84.4, "tra": 84.2, "men": 84.2, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
-    "Riin KOVAC": {"con": 89.0, "tra": 89.0, "men": 89.0, "réa": 89.0, "pré": 88.6, "nst": 88.0, "ene": 88.0},
-    "Allessandro AIELLO": {"con": 85.0, "tra": 90.0, "men": 89.6, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
-    "Nicholas MAKKINEN": {"con": 85.0, "tra": 100.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
-    "Oscar ROSBERG": {"con": 88.0, "tra": 88.0, "men": 87.6, "réa": 89.0, "pré": 88.0, "nst": 87.0, "ene": 87.2},
-    "Luis FERNAND": {"con": 88.2, "tra": 87.0, "men": 89.0, "réa": 88.4, "pré": 87.0, "nst": 88.0, "ene": 88.2},
-    "Tom FERNANDEZ": {"con": 86.2, "tra": 90.4, "men": 85.6, "réa": 85.4, "pré": 90.6, "nst": 86.2, "ene": 86.0},
-    "Noah CONNOR": {"con": 85.0, "tra": 86.0, "men": 87.0, "réa": 86.0, "pré": 86.0, "nst": 86.0, "ene": 86.2},
-    "Zach DIAZ": {"con": 84.0, "tra": 86.2, "men": 84.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
-    "Justin HULER": {"con": 89.1, "tra": 85.0, "men": 85.5, "réa": 84.6, "pré": 88.1, "nst": 85.9, "ene": 85.0},
-    "Marc BELMONDINI": {"con": 86.4, "tra": 87.0, "men": 85.8, "réa": 85.6, "pré": 87.0, "nst": 83.8, "ene": 84.8},
-    "Alain PROVISTE": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 83.4},
-    "Rio NUNO": {"con": 83.4, "tra": 83.6, "men": 82.6, "réa": 82.2, "pré": 83.6, "nst": 83.6, "ene": 84.2},
-    "Jakie BILLOUTTE": {"con": 84.2, "tra": 83.6, "men": 84.2, "réa": 83.2, "pré": 83.0, "nst": 84.2, "ene": 83.4},
-    "Trivality NITROX": {"con": 82.0, "tra": 86.4, "men": 82.0, "réa": 82.0, "pré": 81.0, "nst": 82.0, "ene": 80.0},
-    "Félix ENDER": {"con": 86.0, "tra": 90.0, "men": 86.0, "réa": 86.0, "pré": 86.4, "nst": 85.8, "ene": 85.4},
-    "Tome THEO": {"con": 85.0, "tra": 86.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 84.8, "ene": 85.0},
+    "hae won kim": {"con": 90.0, "tra": 88.2, "men": 88.4, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 88.3},
+    "andreas pryviat": {"con": 84.8, "tra": 85.0, "men": 83.0, "réa": 85.0, "pré": 84.0, "nst": 85.0, "ene": 85.0},
+    "léo medo": {"con": 88.0, "tra": 88.0, "men": 87.0, "réa": 88.0, "pré": 89.0, "nst": 87.0, "ene": 86.2},
+    "lewis niamate": {"con": 84.4, "tra": 84.2, "men": 84.2, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "riin kovac": {"con": 89.0, "tra": 89.0, "men": 89.0, "réa": 89.0, "pré": 88.6, "nst": 88.0, "ene": 88.0},
+    "allessandro aiello": {"con": 85.0, "tra": 90.0, "men": 89.6, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
+    "nicholas makkinen": {"con": 85.0, "tra": 100.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
+    "oscar rosberg": {"con": 88.0, "tra": 88.0, "men": 87.6, "réa": 89.0, "pré": 88.0, "nst": 87.0, "ene": 87.2},
+    "luis fernand": {"con": 88.2, "tra": 87.0, "men": 89.0, "réa": 88.4, "pré": 87.0, "nst": 88.0, "ene": 88.2},
+    "tom fernand": {"con": 86.2, "tra": 90.4, "men": 85.6, "réa": 85.4, "pré": 90.6, "nst": 86.2, "ene": 86.0},
+    "noah connor": {"con": 85.0, "tra": 86.0, "men": 87.0, "réa": 86.0, "pré": 86.0, "nst": 86.0, "ene": 86.2},
+    "zach diaz": {"con": 84.0, "tra": 86.2, "men": 84.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "justin huler": {"con": 89.1, "tra": 85.0, "men": 85.5, "réa": 84.6, "pré": 88.1, "nst": 85.9, "ene": 85.0},
+    "marc belmondini": {"con": 86.4, "tra": 87.0, "men": 85.8, "réa": 85.6, "pré": 87.0, "nst": 83.8, "ene": 84.8},
+    "alain proviste": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 83.4},
+    "rio nuno": {"con": 83.4, "tra": 83.6, "men": 82.6, "réa": 82.2, "pré": 83.6, "nst": 83.6, "ene": 84.2},
+    "jakie biloutte": {"con": 84.2, "tra": 83.6, "men": 84.2, "réa": 83.2, "pré": 83.0, "nst": 84.2, "ene": 83.4},
+    "trivality nitrox": {"con": 82.0, "tra": 86.4, "men": 82.0, "réa": 82.0, "pré": 81.0, "nst": 82.0, "ene": 80.0},
+    "félix ender": {"con": 86.0, "tra": 90.0, "men": 86.0, "réa": 86.0, "pré": 86.4, "nst": 85.8, "ene": 85.4},
+    "tome theo": {"con": 85.0, "tra": 86.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 84.8, "ene": 85.0},
 }
 
 @bot.command()
@@ -192,14 +192,14 @@ Nom pilote : {pronom}
                      générale
 └
 
-╭→     CON                    {stats['CON']}    ┐
+╭→     CON                    {stats['con']}    ┐
 ┊       concentration
 ┊
-┊→     TRA                    {stats['TRA']}
+┊→     TRA                    {stats['tra']}
 ┊       trajectoire                   ┘
 ╰
 
-╭→     MEN                    {stats['MEN']}       ┐
+╭→     MEN                    {stats['men']}       ┐
 ┊       mentalité
 ┊
 ┊→     RÉA                    {stats['réa']} 
@@ -210,10 +210,10 @@ Nom pilote : {pronom}
 ╰
 
 ╭
-┊→       NST                    {stats['NST']}
+┊→       NST                    {stats['nst']}
 ┊         no stress
 ┊
-┊→       ENE                    {stats['ENE']}
+┊→       ENE                    {stats['ene']}
 ┊         energie
 ╰
     :Fia: :peflogo:
