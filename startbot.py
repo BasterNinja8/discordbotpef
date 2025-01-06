@@ -252,6 +252,71 @@ Besoin d’aide ? Merci de faire la commande /aide
 """
     await ctx.send(fiche_message)
 
+@bot.command()
+async def fiche(ctx, pronom: str):
+    """
+    Affiche la fiche détaillée d'un pilote selon le pronom fourni.
+    """
+    pronom = pronom.upper()
+    if pronom not in stats_globaux:
+        await ctx.send(f"Le pronom {pronom} n'existe pas. Veuillez en choisir un parmi : {', '.join(stats_globaux.keys())}.")
+        return
+
+    # Récupération des informations du pilote
+    if pronom in noms_prenoms:
+        prenom, nom, sexe, catégorie = noms_prenoms[pronom]
+    else:
+        prenom, nom, sexe, catégorie = "Inconnu", "Inconnu", "Inconnu", "Inconnu"
+
+    # Récupération des statistiques
+    stats = stats_globaux[pronom]
+    note_generale = sum(stats.values()) / len(stats.values())
+
+    # Construction de la fiche
+    fiche_message = f"""
+**DRIVER FICHE**
+
+Nom pilote : {prenom} {nom}
+Sexe : {sexe}
+Catégorie : {catégorie}
+
+--------------------------
+
+┌
+          {round(note_generale)}          NOTE
+                     générale
+└
+
+╭→     CON                    {stats['con']}    ┐
+┊       concentration
+┊
+┊→     TRA                    {stats['tra']}
+┊       trajectoire                   ┘
+╰
+
+╭→     MEN                    {stats['men']}       ┐
+┊       mentalité
+┊
+┊→     RÉA                    {stats['réa']} 
+┊       réaction
+┊
+┊→     PRÉ                   {stats['pré']}
+┊       précision                         ┘
+╰
+
+╭
+┊→       NST                    {stats['nst']}
+┊         no stress
+┊
+┊→       ENE                    {stats['ene']}
+┊         energie
+╰
+    :Fia: :peflogo:
+  OFFICIAL STATS
+
+------------------------------------------
+"""
+    await ctx.send(fiche_message)
 
 @bot.command()
 async def aide(ctx):
@@ -259,7 +324,7 @@ async def aide(ctx):
     Commande pour afficher l'aide sur les commandes disponibles.
     """
     embed = discord.Embed(title="Comment marche les up !", color=0x00ffcc)
-    embed.add_field(name="/amélioration [option] [pronom pilote ex: Aiello -> AIE] [mettre les noms des stats a améliorer OBLIGATOIREMENT EN MINUSCULE]", value="Améliore les statistiques selon l'option choisie :\n\n1. +0.1 pour 4 stats\n2. +0.2 pour 2 stats\n3. +0.2 pour 1 stat et +0.1 pour 2 stats\n4. +0.3 pour 1 stat et +0.1 pour 1 stat\n5. +0.4 pour 1 stat\n\nExemple : /amélioration 2 AIE men tra", inline=False)
+    embed.add_field(name="/up [option] [pronom pilote ex: Aiello -> AIE] [mettre les noms des stats a améliorer OBLIGATOIREMENT EN MINUSCULE]", value="Améliore les statistiques selon l'option choisie :\n\n1. +0.1 pour 4 stats\n2. +0.2 pour 2 stats\n3. +0.2 pour 1 stat et +0.1 pour 2 stats\n4. +0.3 pour 1 stat et +0.1 pour 1 stat\n5. +0.4 pour 1 stat\n\nExemple : /up 2 AIE men tra", inline=False)
 
     await ctx.send(embed=embed)
 
