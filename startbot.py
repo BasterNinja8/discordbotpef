@@ -75,26 +75,26 @@ user_stats = {}
 
 # Initialisation des statistiques globales pour chaque pronom
 stats_globaux = {
-    "KIM": {"con": 90.0, "tra": 88.2, "men": 88.4, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 88.3},
-    "PRY": {"con": 84.8, "tra": 85.0, "men": 83.0, "réa": 85.0, "pré": 84.0, "nst": 85.0, "ene": 85.0},
-    "MED": {"con": 88.0, "tra": 88.0, "men": 87.0, "réa": 88.0, "pré": 89.0, "nst": 87.0, "ene": 86.2},
-    "NIA": {"con": 84.4, "tra": 84.2, "men": 84.2, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
-    "KOV": {"con": 89.0, "tra": 89.0, "men": 89.0, "réa": 89.0, "pré": 88.6, "nst": 88.0, "ene": 88.0},
-    "AIE": {"con": 85.0, "tra": 90.0, "men": 89.6, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
-    "MAK": {"con": 85.0, "tra": 100.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
-    "ROS": {"con": 88.0, "tra": 88.0, "men": 87.6, "réa": 89.0, "pré": 88.0, "nst": 87.0, "ene": 87.2},
-    "LFE": {"con": 88.2, "tra": 87.0, "men": 89.0, "réa": 88.4, "pré": 87.0, "nst": 88.0, "ene": 88.2},
-    "TFE": {"con": 86.2, "tra": 90.4, "men": 85.6, "réa": 85.4, "pré": 90.6, "nst": 86.2, "ene": 86.0},
-    "CON": {"con": 85.0, "tra": 86.0, "men": 87.0, "réa": 86.0, "pré": 86.0, "nst": 86.0, "ene": 86.2},
-    "DIA": {"con": 84.0, "tra": 86.2, "men": 84.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
-    "HUL": {"con": 89.1, "tra": 85.0, "men": 85.5, "réa": 84.6, "pré": 88.1, "nst": 85.9, "ene": 85.0},
-    "BEL": {"con": 86.4, "tra": 87.0, "men": 85.8, "réa": 85.6, "pré": 87.0, "nst": 83.8, "ene": 84.8},
-    "PRO": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 83.4},
-    "NUN": {"con": 83.4, "tra": 83.6, "men": 82.6, "réa": 82.2, "pré": 83.6, "nst": 83.6, "ene": 84.2},
-    "BIL": {"con": 84.2, "tra": 83.6, "men": 84.2, "réa": 83.2, "pré": 83.0, "nst": 84.2, "ene": 83.4},
-    "NIT": {"con": 82.0, "tra": 86.4, "men": 82.0, "réa": 82.0, "pré": 81.0, "nst": 82.0, "ene": 80.0},
-    "END": {"con": 86.0, "tra": 90.0, "men": 86.0, "réa": 86.0, "pré": 86.4, "nst": 85.8, "ene": 85.4},
-    "THE": {"con": 85.0, "tra": 86.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 84.8, "ene": 85.0},
+    "Hae Won KIM": {"con": 90.0, "tra": 88.2, "men": 88.4, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 88.3},
+    "Andreas PRYVIAT": {"con": 84.8, "tra": 85.0, "men": 83.0, "réa": 85.0, "pré": 84.0, "nst": 85.0, "ene": 85.0},
+    "Léo MEDO": {"con": 88.0, "tra": 88.0, "men": 87.0, "réa": 88.0, "pré": 89.0, "nst": 87.0, "ene": 86.2},
+    "Lewis NIAMATE": {"con": 84.4, "tra": 84.2, "men": 84.2, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "Riin KOVAC": {"con": 89.0, "tra": 89.0, "men": 89.0, "réa": 89.0, "pré": 88.6, "nst": 88.0, "ene": 88.0},
+    "Allessandro AIELLO": {"con": 85.0, "tra": 90.0, "men": 89.6, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
+    "Nicholas MAKKINEN": {"con": 85.0, "tra": 100.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 86.0, "ene": 85.0},
+    "Oscar ROSBERG": {"con": 88.0, "tra": 88.0, "men": 87.6, "réa": 89.0, "pré": 88.0, "nst": 87.0, "ene": 87.2},
+    "Luis FERNAND": {"con": 88.2, "tra": 87.0, "men": 89.0, "réa": 88.4, "pré": 87.0, "nst": 88.0, "ene": 88.2},
+    "Tom FERNANDEZ": {"con": 86.2, "tra": 90.4, "men": 85.6, "réa": 85.4, "pré": 90.6, "nst": 86.2, "ene": 86.0},
+    "Noah CONNOR": {"con": 85.0, "tra": 86.0, "men": 87.0, "réa": 86.0, "pré": 86.0, "nst": 86.0, "ene": 86.2},
+    "Zach DIAZ": {"con": 84.0, "tra": 86.2, "men": 84.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "Justin HULER": {"con": 89.1, "tra": 85.0, "men": 85.5, "réa": 84.6, "pré": 88.1, "nst": 85.9, "ene": 85.0},
+    "Marc BELMONDINI": {"con": 86.4, "tra": 87.0, "men": 85.8, "réa": 85.6, "pré": 87.0, "nst": 83.8, "ene": 84.8},
+    "Alain PROVISTE": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 83.4},
+    "Rio NUNO": {"con": 83.4, "tra": 83.6, "men": 82.6, "réa": 82.2, "pré": 83.6, "nst": 83.6, "ene": 84.2},
+    "Jakie BILLOUTTE": {"con": 84.2, "tra": 83.6, "men": 84.2, "réa": 83.2, "pré": 83.0, "nst": 84.2, "ene": 83.4},
+    "Trivality NITROX": {"con": 82.0, "tra": 86.4, "men": 82.0, "réa": 82.0, "pré": 81.0, "nst": 82.0, "ene": 80.0},
+    "Félix ENDER": {"con": 86.0, "tra": 90.0, "men": 86.0, "réa": 86.0, "pré": 86.4, "nst": 85.8, "ene": 85.4},
+    "Tome THEO": {"con": 85.0, "tra": 86.0, "men": 85.2, "réa": 85.0, "pré": 85.0, "nst": 84.8, "ene": 85.0},
 }
 
 @bot.command()
@@ -156,8 +156,9 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
         else:
             await ctx.send("Option ou nombre de catégories invalides. Veuillez vérifier votre commande.")
             return
-
+        
         # Afficher les statistiques mises à jour
+        
         embed = discord.Embed(title=f"Statistiques mises à jour pour {pronom.capitalize()}", color=0x00ffcc)
         for key, value in stats.items():
             embed.add_field(name=key, value=f"{value:.1f}", inline=False)
@@ -166,6 +167,61 @@ async def amélioration(ctx, option: int, pronom: str, *categories):
     except ValueError:
         await ctx.send("Une erreur est survenue. Assurez-vous que toutes les données fournies sont correctes.")
 
+@bot.command()
+async def fiche(ctx, pronom: str):
+    """
+    Affiche la fiche détaillée d'un pilote avec ses statistiques formatées.
+    """
+    pronom = pronom.upper()
+    if pronom not in stats_globaux:
+        await ctx.send("Pronom non valide. Veuillez entrer un pronom valide.")
+        return
+
+    stats = stats_globaux[pronom]
+    note_generale = sum(stats.values()) / len(stats.values())
+    
+    fiche_message = f"""
+**DRIVER FICHE**
+
+Nom pilote : {pronom}
+
+--------------------------
+
+┌
+          {round(note_generale)}          NOTE
+                     générale
+└
+
+╭→     CON                    {stats['CON']}    ┐
+┊       concentration
+┊
+┊→     TRA                    {stats['TRA']}
+┊       trajectoire                   ┘
+╰
+
+╭→     MEN                    {stats['MEN']}       ┐
+┊       mentalité
+┊
+┊→     RÉA                    {stats['réa']} 
+┊       réaction
+┊
+┊→     PRÉ                   {stats['pré']}
+┊       précision                         ┘
+╰
+
+╭
+┊→       NST                    {stats['NST']}
+┊         no stress
+┊
+┊→       ENE                    {stats['ENE']}
+┊         energie
+╰
+    :Fia: :peflogo:
+  OFFICIAL STATS
+
+------------------------------------------
+"""
+    await ctx.send(fiche_message)
 
 
 @bot.command()
