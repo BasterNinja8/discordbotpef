@@ -264,9 +264,9 @@ async def fiche(ctx, pronom: str):
 
     # Récupération des informations du pilote
     if pronom in noms_prenoms:
-        prenom, nom, sexe, catégorie = noms_prenoms[pronom]
+        prenom, nom, sex, catégorie = noms_prenoms[pronom]
     else:
-        prenom, nom, sexe, catégorie = "Inconnu", "Inconnu", "Inconnu", "Inconnu"
+        prenom, nom, sex, catégorie = "Inconnu", "Inconnu", "Inconnu", "Inconnu"
 
     # Récupération des statistiques
     stats = stats_globaux[pronom]
