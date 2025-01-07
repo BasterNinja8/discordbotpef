@@ -133,9 +133,6 @@ async def up(ctx, option: int, pronom: str, *categories):
         if last_date == current_date:
             await ctx.send("Vous avez déjà utilisé la commande /amélioration aujourd'hui. Revenez demain !")
             return
-
-    # Met à jour la date d'utilisation de la commande
-    user_last_command_date[user_id] = current_date
     
     """
     Améliore les statistiques d'un pronom spécifique selon l'option choisie.
@@ -161,12 +158,16 @@ async def up(ctx, option: int, pronom: str, *categories):
                     await ctx.send(f"La statistique {category.upper()} ne peut pas dépasser 100. Action annulée.")
                     return
                 stats[category] += 0.1
+                # Met à jour la date d'utilisation de la commande
+                user_last_command_date[user_id] = current_date
         elif option == 2 and len(categories) >= 2:
             for category in categories[:2]:
                 if stats[category] + 0.2 > 100:
                     await ctx.send(f"La statistique {category.upper()} ne peut pas dépasser 100. Action annulée.")
                     return
                 stats[category] += 0.2
+                # Met à jour la date d'utilisation de la commande
+                user_last_command_date[user_id] = current_date
         elif option == 3 and len(categories) >= 3:
             if stats[categories[0]] + 0.2 > 100:
                 await ctx.send(f"La statistique {categories[0].upper()} ne peut pas dépasser 100. Action annulée.")
@@ -177,6 +178,8 @@ async def up(ctx, option: int, pronom: str, *categories):
                     await ctx.send(f"La statistique {category.upper()} ne peut pas dépasser 100. Action annulée.")
                     return
                 stats[category] += 0.1
+                # Met à jour la date d'utilisation de la commande
+                user_last_command_date[user_id] = current_date
         elif option == 4 and len(categories) >= 2:
             if stats[categories[0]] + 0.3 > 100:
                 await ctx.send(f"La statistique {categories[0].upper()} ne peut pas dépasser 100. Action annulée.")
@@ -186,11 +189,15 @@ async def up(ctx, option: int, pronom: str, *categories):
                 await ctx.send(f"La statistique {categories[1].upper()} ne peut pas dépasser 100. Action annulée.")
                 return
             stats[categories[1]] += 0.1
+            # Met à jour la date d'utilisation de la commande
+            user_last_command_date[user_id] = current_date
         elif option == 5 and len(categories) >= 1:
             if stats[categories[0]] + 0.4 > 100:
                 await ctx.send(f"La statistique {categories[0].upper()} ne peut pas dépasser 100. Action annulée.")
                 return
             stats[categories[0]] += 0.4
+            # Met à jour la date d'utilisation de la commande
+            user_last_command_date[user_id] = current_date
         else:
             await ctx.send("Option ou nombre de catégories invalides. Veuillez vérifier votre commande.")
 
