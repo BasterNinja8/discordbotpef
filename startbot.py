@@ -339,7 +339,7 @@ Cette commande permet d'améliorer les statistiques d'un pilote en fonction de l
 
 ## *Options disponibles* :
 
-1. **+0.1** sur *4 stats**
+1. **+0.1** sur **4 stats**
 
 2. **+0.2** sur **2 stats**
 
