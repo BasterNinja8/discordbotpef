@@ -330,10 +330,33 @@ async def aide(ctx):
     """
     Commande pour afficher l'aide sur les commandes disponibles.
     """
-    embed = discord.Embed(title="Comment marche les up !", color=0x00ffcc)
-    embed.add_field(name="/up [option] [pronom pilote ex: Aiello -> AIE] [mettre les noms des stats a améliorer OBLIGATOIREMENT EN MINUSCULE]", value="Améliore les statistiques selon l'option choisie :\n\n1. +0.1 pour 4 stats\n2. +0.2 pour 2 stats\n3. +0.2 pour 1 stat et +0.1 pour 2 stats\n4. +0.3 pour 1 stat et +0.1 pour 1 stat\n5. +0.4 pour 1 stat\n\nExemple : /up 2 AIE men tra", inline=False)
+    aide_message = f'''**Comment fonctionnent les commandes /up ?**
 
-    await ctx.send(embed=embed)
+Syntaxe :
+`/up [option] [pronom pilote ex : Aiello -> AIE] [statistiques à améliorer en minuscules]`
+
+Cette commande permet d'améliorer les statistiques d'un pilote en fonction de l'option choisie.
+
+## *Options disponibles* :
+
+1. **+0.1** sur *4 stats**
+
+2. **+0.2** sur **2 stats**
+
+3. **+0.2** sur **1 stat** et **+0.1** sur **2 stats**
+
+4. **+0.3** sur **1 stat** et **+0.1** sur **1 stat**
+
+5. **+0.4** sur **1 stat**
+
+## *Exemple d'utilisation* :
+
+`/up 2 AIE men tra`
+Ici, les stats **men** et **tra** seront améliorées de **+0.2** chacune.
+
+**Note** : Si des résultats affichent plusieurs chiffres après la virgule, ne prenez en compte que le **premier chiffre après la virgule.**'''
+
+    await ctx.send(aide_message)
 
 connect()
 # Démarrage du bot.
