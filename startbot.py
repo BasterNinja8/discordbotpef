@@ -131,7 +131,7 @@ async def up(ctx, option: int, pronom: str, *categories):
     if user_id in user_last_command_date:
         last_date = user_last_command_date[user_id]
         if last_date == current_date:
-            await ctx.send("Vous avez déjà utilisé la commande /amélioration aujourd'hui. Revenez demain !")
+            await ctx.send("Vous avez déjà utilisé la commande /up aujourd'hui. Revenez demain !")
             return
     
     """
