@@ -126,7 +126,7 @@ noms_prenoms = {
 async def up(ctx, option: int, pronom: str, *categories):
 
     user_id = ctx.author.id
-    current_date = datetime.datetime.now().date()
+    current_date = datetime.now().date()
 
     # Rôles qui permettent des utilisations illimitées
     roles_with_no_limit = ["Staff du serveur"]
