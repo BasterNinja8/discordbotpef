@@ -124,8 +124,8 @@ noms_prenoms = {
 @bot.command()
 async def up(ctx, option: int, pronom: str, *categories):
 
-    user_id = ctx.author.id
-    current_date = datetime.now().date()
+user_id = ctx.author.id
+    current_date = datetime.datetime.now().date()
 
     # Rôles qui permettent des utilisations illimitées
     roles_with_no_limit = ["Staff du serveur"]
@@ -133,13 +133,13 @@ async def up(ctx, option: int, pronom: str, *categories):
     # Vérification si l'utilisateur a un rôle spécial
     has_no_limit = any(role.name in roles_with_no_limit for role in ctx.author.roles)
 
-    # Vérifier si l'utilisateur a déjà utilisé la commande aujourd'hui
-    if user_id in user_last_command_date:
-        last_date = user_last_command_date[user_id]
-        if last_date == current_date:
-            await ctx.send("Vous avez déjà utilisé la commande /up aujourd'hui. Revenez demain !")
+    # Si l'utilisateur n'a pas un rôle spécial, limiter à une utilisation par jour
+    if not has_no_limit:
+        if user_id in user_last_command_date and user_last_command_date[user_id] == current_date:
+            await ctx.send("Vous avez déjà utilisé la commande /up aujourd'hui. Revenez demain !")
             return
-    
+
+    # Vérification si le pronom existe
     pronom = pronom.upper()
     if pronom not in stats_globaux:
         await ctx.send(f"Le pronom {pronom} n'existe pas. Veuillez en choisir un parmi : {', '.join(stats_globaux.keys())}.")
@@ -147,19 +147,12 @@ async def up(ctx, option: int, pronom: str, *categories):
 
     stats = stats_globaux[pronom]
 
+    # Vérification des catégories spécifiées
     for category in categories:
         category = category.lower()
         if category not in stats:
             await ctx.send(f"La catégorie {category} n'existe pas pour {pronom}. Veuillez choisir parmi : {', '.join(stats.keys())}.")
             return
-
-        # Si l'utilisateur n'a pas de rôle spécial, limiter à une utilisation par jour
-    if not has_no_limit:
-        if user_id in user_last_command_date:
-            last_date = user_last_command_date[user_id]
-            if last_date == current_date:
-                await ctx.send("Vous avez déjà utilisé la commande /up aujourd'hui. Revenez demain !")
-                return
 
     try:
         # (Le code de gestion des options reste le même ici)
