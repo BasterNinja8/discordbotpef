@@ -5,6 +5,7 @@ import discord
 from discord.ext import commands
 from connect import connect
 import random
+import datetime
 
 load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
