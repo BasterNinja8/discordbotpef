@@ -124,7 +124,7 @@ noms_prenoms = {
 @bot.command()
 async def up(ctx, option: int, pronom: str, *categories):
 
-user_id = ctx.author.id
+    user_id = ctx.author.id
     current_date = datetime.datetime.now().date()
 
     # Rôles qui permettent des utilisations illimitées
