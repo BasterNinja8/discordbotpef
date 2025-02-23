@@ -38,36 +38,35 @@ async def crée(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
-async def transformer(ctx, *notes):
+async def stats(ctx, pronom: str):
     """
-    Commande pour transformer des notes en stats.
-    Les 4 premières notes sont utilisées pour calculer la moyenne de la Force (arrondie),
-    et les 3 dernières pour calculer la moyenne de l'Agression (arrondie).
+    Commande pour afficher les statistiques calculées d'un pilote.
+    Utilisation : /stats [pronom pilote]
     """
     try:
-        # Convertir les notes en liste d'entiers
-        notes = list(map(int, notes))
-
-        # Vérifier que 7 notes sont fournies
-        if len(notes) != 7:
-            await ctx.send("Veuillez fournir exactement 7 notes (4 pour Force, 3 pour Agression).")
+        # Vérifier si le pilote existe
+        if pronom.upper() not in stats_globaux:
+            await ctx.send(f"❌ Le pilote '{pronom}' n'existe pas.")
             return
 
-        # Calculer la moyenne pour Force et Agression
-        force_notes = notes[:4]
-        agression_notes = notes[4:]
-        force = round(sum(force_notes) / len(force_notes))
-        agression = round(sum(agression_notes) / len(agression_notes))
+        # Récupérer les stats du pilote
+        pilote_stats = stats_globaux[pronom.upper()]
+        stats_values = list(pilote_stats.values())  # Convertir en liste pour gérer l'ordre
 
-        # Créer un message avec les statistiques calculées
-        embed = discord.Embed(title="Stats calculées", color=0x0000ff)
-        embed.add_field(name="Force", value=str(force), inline=False)
-        embed.add_field(name="Agression", value=str(agression), inline=False)
+        # Calcul de Force et Agression
+        force = round(sum(stats_values[:4]) / 4)  # Moyenne des 4 premières stats
+        agression = round(sum(stats_values[4:]) / 3)  # Moyenne des 3 dernières stats
+
+        # Créer un embed pour afficher les stats
+        embed = discord.Embed(title=f"📊 Stats calculées de {pronom.upper()}", color=0x00ff00)
+        embed.add_field(name="💪 Force", value=str(force), inline=True)
+        embed.add_field(name="🔥 Agression", value=str(agression), inline=True)
 
         await ctx.send(embed=embed)
 
-    except ValueError:
-        await ctx.send("Veuillez fournir uniquement des nombres entiers comme notes.")
+    except Exception as e:
+        await ctx.send(f"❌ Une erreur est survenue : {e}")
+
 
 # Stockage des statistiques par utilisateur
 user_stats = {}
