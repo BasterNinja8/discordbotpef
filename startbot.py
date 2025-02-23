@@ -391,33 +391,7 @@ Ici, les stats **men** et **tra** seront améliorées de **+0.2** chacune.
 **Note** : Si des résultats affichent plusieurs chiffres après la virgule, ne prenez en compte que le **premier chiffre après la virgule.**'''
 
     await ctx.send(aide_message)
-@bot.event
-async def on_ready():
-    print(f"{bot.user} est connecté !")
-    bump_task.start()  # Démarre la tâche automatique
 
-@tasks.loop(hours=2)  # Répète toutes les 2 heures
-async def bump_task():
-    channel_id = 123456789012345678  # Remplace par l'ID du salon où envoyer la commande
-    channel = bot.get_channel(channel_id)
-
-    if channel:
-        await channel.send("/bump")  # Envoie la commande pour le bot Disboard
-        print("✅ Commande /bump envoyée !")
-    else:
-        print("❌ Salon introuvable, vérifie l'ID.")
-
-@bot.command()
-async def start_bump(ctx):
-    """Commande pour démarrer manuellement la boucle de bump"""
-    bump_task.start()
-    await ctx.send("🚀 Le bump automatique est activé toutes les 2 heures !")
-
-@bot.command()
-async def stop_bump(ctx):
-    """Commande pour arrêter la boucle de bump"""
-    bump_task.stop()
-    await ctx.send("🛑 Le bump automatique est désactivé.")
 connect()
 # Démarrage du bot.
 bot.run(BOT_TOKEN)
