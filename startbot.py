@@ -121,10 +121,43 @@ noms_prenoms = {
     "DIA": ("Zach", "Diaz", "Homme", "Formula One"),
     "THE": ("Tome", "Théo", "Homme", "Formula One"),
 }
+# Variable pour suivre l'état de la commande /up
+up_bloque = False
+
+@bot.command()
+async def bloquerup(ctx):
+    """
+    Active ou désactive la commande /up.
+    Seuls les administrateurs peuvent l'utiliser.
+    """
+    global up_bloque
+
+    # Vérifier si l'utilisateur est administrateur
+    if not ctx.author.guild_permissions.administrator:
+        await ctx.send("❌ Vous n'avez pas la permission d'utiliser cette commande.")
+        return
+
+    # Inverser l'état de la commande /up
+    up_bloque = not up_bloque
+
+    if up_bloque:
+        await ctx.send("🚫 La commande `/up` est maintenant **désactivée**.")
+    else:
+        await ctx.send("✅ La commande `/up` est maintenant **activée**.")
 
 @bot.command()
 async def up(ctx, option: int, pronom: str, *categories):
+    """
+    Commande pour améliorer les statistiques des pilotes.
+    """
+    global up_bloque
 
+    # Vérifier si la commande est bloquée
+    if up_bloque:
+        await ctx.send("❌ La commande `/up` est actuellement désactivée.")
+        return
+
+    # (Le reste du code de la commande /up reste inchangé)
     user_id = ctx.author.id
     current_date = datetime.now().date()
 
