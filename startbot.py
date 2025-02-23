@@ -22,22 +22,6 @@ async def on_ready():
     print(f'Bot connecté en tant que {bot.user}')
 
 @bot.command()
-async def crée(ctx):
-    """
-    Commande pour créer deux stats : Force et Agression.
-    Les valeurs sont générées aléatoirement entre 77 et 80.
-    """
-    force = random.randint(77, 80)
-    agression = random.randint(77, 80)
-
-    # Crée un message avec les statistiques.
-    embed = discord.Embed(title="Vos stats générées", color=0x00ff00)
-    embed.add_field(name="Force", value=str(force), inline=False)
-    embed.add_field(name="Agression", value=str(agression), inline=False)
-
-    await ctx.send(embed=embed)
-
-@bot.command()
 async def stats(ctx, pronom: str):
     """
     Commande pour afficher les statistiques calculées d'un pilote.
@@ -76,26 +60,26 @@ user_last_command_date = {}
 
 # Initialisation des statistiques globales pour chaque pronom
 stats_globaux = {
-    "KIM": {"con": 90.0, "tra": 89.8, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 89.2, "ene": 88.3},
+    "KIM": {"con": 90.0, "tra": 89.8, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 90.4, "ene": 88.3},
     "BIA": {"con": 85.0, "tra": 85.0, "men": 85.1, "réa": 85.0, "pré": 85.3, "nst": 85.0, "ene": 85.0},
-    "WIL": {"con": 81.8, "tra": 84.4, "men": 81.0, "réa": 82.0, "pré": 83.4, "nst": 81.0, "ene": 82.0},
-    "NIA": {"con": 88.2, "tra": 85.8, "men": 85.4, "réa": 85.4, "pré": 85.4, "nst": 85.4, "ene": 85.4},
-    "KOV": {"con": 91.0, "tra": 91.0, "men": 90.6, "réa": 90.0, "pré": 90.0, "nst": 90.0, "ene": 90.0},
-    "AIE": {"con": 90.0, "tra": 96.4, "men": 90.0, "réa": 85.2, "pré": 85.0, "nst": 86.0, "ene": 85.0},
-    "PAI": {"con": 83.6, "tra": 83.8, "men": 84.0, "réa": 83.8, "pré": 83.9, "nst": 83.5, "ene": 84.0},
-    "ROS": {"con": 89.6, "tra": 90.0, "men": 89.0, "réa": 89.0, "pré": 90.0, "nst": 89.0, "ene": 90.0},
-    "LFE": {"con": 89.0, "tra": 90.2, "men": 89.0, "réa": 88.4, "pré": 88.2, "nst": 88.0, "ene": 88.2},
-    "TFE": {"con": 88.0, "tra": 92.8, "men": 87.2, "réa": 87.0, "pré": 93.0, "nst": 88.4, "ene": 87.8},
-    "CON": {"con": 87.8, "tra": 88.0, "men": 87.0, "réa": 87.6, "pré": 88.0, "nst": 88.0, "ene": 87.0},
-    "GAI": {"con": 81.0, "tra": 92.6, "men": 81.5, "réa": 82.5, "pré": 83.0, "nst": 81.0, "ene": 82.0},
-    "HUL": {"con": 89.1, "tra": 86.4, "men": 85.7, "réa": 86.8, "pré": 88.1, "nst": 86.3, "ene": 87.2},
-    "BEL": {"con": 87.2, "tra": 87.4, "men": 87.4, "réa": 87.2, "pré": 87.4, "nst": 86.6, "ene": 86.8},
+    "WIL": {"con": 81.8, "tra": 86.4, "men": 81.0, "réa": 82.0, "pré": 83.4, "nst": 81.0, "ene": 82.0},
+    "NIA": {"con": 88.2, "tra": 87.0, "men": 85.8, "réa": 85.8, "pré": 85.8, "nst": 85.4, "ene": 85.4},
+    "KOV": {"con": 91.0, "tra": 91.0, "men": 91.0, "réa": 91.0, "pré": 90.6, "nst": 90.0, "ene": 90.0},
+    "AIE": {"con": 90.0, "tra": 98.4, "men": 90.0, "réa": 85.2, "pré": 85.0, "nst": 86.0, "ene": 85.0},
+    "PAI": {"con": 84.0, "tra": 84.2, "men": 84.0, "réa": 84.2, "pré": 84.3, "nst": 83.9, "ene": 84.0},
+    "ROS": {"con": 90.0, "tra": 90.0, "men": 89.2, "réa": 90.0, "pré": 90.0, "nst": 89.0, "ene": 90.0},
+    "LFE": {"con": 89.0, "tra": 90.6, "men": 89.0, "réa": 88.4, "pré": 88.2, "nst": 88.0, "ene": 88.2},
+    "TFE": {"con": 88.4, "tra": 93.2, "men": 87.4, "réa": 87.2, "pré": 93.4, "nst": 88.6, "ene": 88.0},
+    "CON": {"con": 89.0, "tra": 88.0, "men": 87.0, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 87.0},
+    "GAI": {"con": 81.0, "tra": 94.6, "men": 81.5, "réa": 82.5, "pré": 83.0, "nst": 81.0, "ene": 82.0},
+    "HUL": {"con": 89.1, "tra": 86.8, "men": 85.7, "réa": 86.8, "pré": 88.1, "nst": 86.3, "ene": 87.6},
+    "BEL": {"con": 87.6, "tra": 87.4, "men": 87.4, "réa": 87.6, "pré": 87.4, "nst": 87.0, "ene": 87.6},
     "PRO": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 83.4},
-    "NUN": {"con": 85.0, "tra": 85.2, "men": 84.6, "réa": 84.8, "pré": 85.2, "nst": 84.0, "ene": 85.0},
-    "BIL": {"con": 85.8, "tra": 86.0, "men": 85.4, "réa": 85.2, "pré": 85.0, "nst": 85.0, "ene": 85.0},
-    "NIT": {"con": 82.0, "tra": 89.6, "men": 82.0, "réa": 82.0, "pré": 83.4, "nst": 82.0, "ene": 82.0},
-    "DIA": {"con": 84.0, "tra": 89.0, "men": 87.6, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
-    "THE": {"con": 87.0, "tra": 87.0, "men": 87.0, "réa": 87.0, "pré": 87.1, "nst": 86.0, "ene": 87.0},
+    "NUN": {"con": 85.0, "tra": 85.2, "men": 85.0, "réa": 85.2, "pré": 85.2, "nst": 85.2, "ene": 85.0},
+    "BIL": {"con": 86.2, "tra": 86.0, "men": 85.4, "réa": 85.6, "pré": 85.4, "nst": 85.4, "ene": 85.4},
+    "NIT": {"con": 82.0, "tra": 89.6, "men": 82.0, "réa": 82.0, "pré": 83.4, "nst": 82.0, "ene": 82.8},
+    "DIA": {"con": 85.6, "tra": 89.0, "men": 88.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "THE": {"con": 87.0, "tra": 88.2, "men": 87.0, "réa": 87.0, "pré": 87.9, "nst": 86.0, "ene": 87.0},
 }
 # Dictionnaire des noms et prénoms6
 noms_prenoms = {
