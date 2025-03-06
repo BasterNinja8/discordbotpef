@@ -61,26 +61,27 @@ user_last_command_date = {}
 
 # Initialisation des statistiques globales pour chaque pronom
 stats_globaux = {
-    "KIM": {"con": 90.0, "tra": 89.8, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 90.4, "ene": 88.3},
+    "KIM": {"con": 90.4, "tra": 89.8, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 90.4, "ene": 89.5},
     "BIA": {"con": 85.0, "tra": 85.0, "men": 85.1, "réa": 85.0, "pré": 85.3, "nst": 85.0, "ene": 85.0},
-    "WIL": {"con": 81.8, "tra": 86.4, "men": 81.0, "réa": 82.0, "pré": 83.4, "nst": 81.0, "ene": 82.0},
-    "NIA": {"con": 88.2, "tra": 87.0, "men": 85.8, "réa": 85.8, "pré": 85.8, "nst": 85.4, "ene": 85.4},
+    "WIL": {"con": 81.8, "tra": 89.6, "men": 81.0, "réa": 82.0, "pré": 83.4, "nst": 81.0, "ene": 82.0},
+    "NIA": {"con": 90.2, "tra": 87.0, "men": 87.0, "réa": 85.8, "pré": 85.8, "nst": 85.4, "ene": 85.4},
     "KOV": {"con": 91.0, "tra": 91.0, "men": 91.0, "réa": 91.0, "pré": 90.6, "nst": 90.0, "ene": 90.0},
-    "AIE": {"con": 90.0, "tra": 98.4, "men": 90.0, "réa": 85.2, "pré": 85.0, "nst": 86.0, "ene": 85.0},
-    "PAI": {"con": 84.0, "tra": 84.2, "men": 84.0, "réa": 84.2, "pré": 84.3, "nst": 83.9, "ene": 84.0},
-    "ROS": {"con": 90.0, "tra": 90.0, "men": 89.2, "réa": 90.0, "pré": 90.0, "nst": 89.0, "ene": 90.0},
-    "LFE": {"con": 89.0, "tra": 90.6, "men": 89.0, "réa": 88.4, "pré": 88.2, "nst": 88.0, "ene": 88.2},
-    "TFE": {"con": 88.4, "tra": 93.2, "men": 87.4, "réa": 87.2, "pré": 93.4, "nst": 88.6, "ene": 88.0},
-    "CON": {"con": 89.0, "tra": 88.0, "men": 87.0, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 87.0},
-    "GAI": {"con": 81.0, "tra": 94.6, "men": 81.5, "réa": 82.5, "pré": 83.0, "nst": 81.0, "ene": 82.0},
-    "HUL": {"con": 89.1, "tra": 86.8, "men": 85.7, "réa": 86.8, "pré": 88.1, "nst": 86.3, "ene": 87.6},
-    "BEL": {"con": 87.6, "tra": 87.4, "men": 87.4, "réa": 87.6, "pré": 87.4, "nst": 87.0, "ene": 87.6},
+    "AIE": {"con": 90.0, "tra": 99.6, "men": 90.0, "réa": 87.2, "pré": 85.0, "nst": 86.0, "ene": 85.0},
+    "PAI": {"con": 84.4, "tra": 84.2, "men": 84.4, "réa": 84.2, "pré": 84.3, "nst": 84.3, "ene": 84.4},
+    "ROS": {"con": 90.4, "tra": 91.0, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 90.0, "ene": 90.0},
+    "LFE": {"con": 89.0, "tra": 91.0, "men": 89.0, "réa": 88.4, "pré": 88.2, "nst": 88.0, "ene": 88.2},
+    "TFE": {"con": 88.8, "tra": 94.0, "men": 87.8, "réa": 87.2, "pré": 94.2, "nst": 89.2, "ene": 88.2},
+    "CON": {"con": 89.0, "tra": 88.0, "men": 88.2, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 89.0},
+    "GAI": {"con": 81.0, "tra": 97.8, "men": 81.5, "réa": 82.5, "pré": 83.0, "nst": 81.0, "ene": 82.0},
+    "HUL": {"con": 89.1, "tra": 86.8, "men": 87.3, "réa": 87.2, "pré": 88.1, "nst": 86.3, "ene": 88.0},
+    "BEL": {"con": 88.0, "tra": 88.2, "men": 88.2, "réa": 88.0, "pré": 87.8, "nst": 87.0, "ene": 87.6},
     "PRO": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 83.4},
     "NUN": {"con": 85.0, "tra": 85.2, "men": 85.0, "réa": 85.2, "pré": 85.2, "nst": 85.2, "ene": 85.0},
-    "BIL": {"con": 86.2, "tra": 86.0, "men": 85.4, "réa": 85.6, "pré": 85.4, "nst": 85.4, "ene": 85.4},
-    "NIT": {"con": 82.0, "tra": 89.6, "men": 82.0, "réa": 82.0, "pré": 83.4, "nst": 82.0, "ene": 82.8},
-    "DIA": {"con": 85.6, "tra": 89.0, "men": 88.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
-    "THE": {"con": 87.0, "tra": 88.2, "men": 87.0, "réa": 87.0, "pré": 87.9, "nst": 86.0, "ene": 87.0},
+    "BIL": {"con": 86.6, "tra": 86.4, "men": 85.8, "réa": 86.0, "pré": 85.4, "nst": 86.2, "ene": 86.2},
+    "NIT": {"con": 83.2, "tra": 89.6, "men": 82.0, "réa": 82.0, "pré": 83.4, "nst": 82.0, "ene": 83.6},
+    "DIA": {"con": 88.0, "tra": 89.8, "men": 88.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "THE": {"con": 88.7, "tra": 90.0, "men": 87.0, "réa": 87.0, "pré": 88.0, "nst": 86.0, "ene": 87.0},
+    "GRO": {"con": 83.0, "tra": 85.0, "men": 82.0, "réa": 86.0, "pré": 83.0, "nst": 85.0, "ene": 84.0},
 }
 # Dictionnaire des noms et prénoms6
 noms_prenoms = {
@@ -104,6 +105,7 @@ noms_prenoms = {
     "NIT": ("Trivality", "Nitrox", "Homme", "Formula One"),
     "DIA": ("Zach", "Diaz", "Homme", "Formula One"),
     "THE": ("Tome", "Théo", "Homme", "Formula One"),
+    "GRO": ("Alex", "Groël", "Homme", "Formula One"),
 }
 # Variable pour suivre l'état de la commande /up
 up_bloque = False
