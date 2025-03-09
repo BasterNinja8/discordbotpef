@@ -86,7 +86,7 @@ stats_globaux = {
 # Dictionnaire des noms et prénoms6
 noms_prenoms = {
     "KIM": ("Hae Won", "Kim", "Femme", "Formula One"),
-    "PRY": ("Andreas", "Pryviat", "Homme", "Formula One"),
+    "BIA": ("Charles", "Bianchi", "Homme", "Formula One"),
     "WIL": ("Leclerc", "Wilveur", "Homme", "Formula One"),
     "NIA": ("Lewis", "Niamate", "Homme", "Formula One"),
     "KOV": ("Riin", "Kovac", "Homme", "Formula One"),
