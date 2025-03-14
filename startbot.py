@@ -61,27 +61,28 @@ user_last_command_date = {}
 
 # Initialisation des statistiques globales pour chaque pronom
 stats_globaux = {
-    "KIM": {"con": 90.8, "tra": 89.8, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 90.4, "ene": 89.5},
-    "BIA": {"con": 83.8, "tra": 83.8, "men": 83.8, "réa": 84.2, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "KIM": {"con": 92.0, "tra": 89.8, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 90.4, "ene": 89.5},
+    "BIA": {"con": 84.4, "tra": 84.4, "men": 83.8, "réa": 84.2, "pré": 84.0, "nst": 84.0, "ene": 84.0},
     "WIL": {"con": 81.8, "tra": 90.0, "men": 81.0, "réa": 82.0, "pré": 83.4, "nst": 81.0, "ene": 82.0},
-    "NIA": {"con": 90.6, "tra": 87.0, "men": 87.0, "réa": 85.8, "pré": 85.8, "nst": 85.4, "ene": 85.4},
-    "KOV": {"con": 92.6, "tra": 91.0, "men": 91.0, "réa": 91.0, "pré": 91.0, "nst": 91.0, "ene": 91.0},
-    "AIE": {"con": 90.0, "tra": 100.0, "men": 90.0, "réa": 87.6, "pré": 85.0, "nst": 86.0, "ene": 85.0},
-    "PAI": {"con": 84.4, "tra": 84.2, "men": 84.4, "réa": 84.6, "pré": 84.3, "nst": 84.3, "ene": 84.4},
-    "ROS": {"con": 91.2, "tra": 91.0, "men": 90.0, "réa": 90.0, "pré": 90.0, "nst": 90.0, "ene": 90.0},
+    "NIA": {"con": 92.6, "tra": 91.6, "men": 87.0, "réa": 85.8, "pré": 85.8, "nst": 85.4, "ene": 85.4},
+    "KOV": {"con": 93.8, "tra": 91.0, "men": 91.0, "réa": 91.0, "pré": 91.0, "nst": 91.0, "ene": 91.0},
+    "AIE": {"con": 90.0, "tra": 100.0, "men": 90.0, "réa": 89.6, "pré": 85.0, "nst": 86.0, "ene": 85.0},
+    "PAI": {"con": 84.8, "tra": 84.6, "men": 84.4, "réa": 84.6, "pré": 84.7, "nst": 84.7, "ene": 84.4},
+    "ROS": {"con": 92.1, "tra": 91.8, "men": 90.0, "réa": 90.4, "pré": 90.0, "nst": 90.0, "ene": 90.0},
     "LFE": {"con": 89.0, "tra": 91.0, "men": 89.0, "réa": 88.4, "pré": 88.2, "nst": 88.0, "ene": 88.2},
-    "TFE": {"con": 89.0, "tra": 94.0, "men": 87.8, "réa": 87.2, "pré": 94.2, "nst": 89.2, "ene": 88.4},
-    "CON": {"con": 89.0, "tra": 88.0, "men": 88.6, "réa": 88.0, "pré": 88.0, "nst": 88.0, "ene": 89.0},
-    "GAI": {"con": 81.0, "tra": 98.6, "men": 81.5, "réa": 82.5, "pré": 83.0, "nst": 81.0, "ene": 82.0},
-    "HUL": {"con": 89.1, "tra": 86.8, "men": 87.3, "réa": 87.2, "pré": 88.1, "nst": 86.7, "ene": 88.0},
-    "BEL": {"con": 88.0, "tra": 88.2, "men": 88.2, "réa": 88.0, "pré": 88.2, "nst": 87.0, "ene": 87.6},
-    "PRO": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 83.4},
-    "NUN": {"con": 85.4, "tra": 86.8, "men": 85.0, "réa": 86.0, "pré": 86.0, "nst": 85.2, "ene": 85.0},
-    "BIL": {"con": 86.6, "tra": 86.4, "men": 85.8, "réa": 86.0, "pré": 85.4, "nst": 86.2, "ene": 86.6},
-    "NIT": {"con": 83.6, "tra": 89.6, "men": 82.0, "réa": 82.0, "pré": 83.4, "nst": 82.0, "ene": 83.6},
-    "DIA": {"con": 88.0, "tra": 90.6, "men": 88.0, "réa": 85.0, "pré": 84.0, "nst": 84.0, "ene": 84.0},
-    "THE": {"con": 89.1, "tra": 90.0, "men": 87.0, "réa": 87.0, "pré": 88.0, "nst": 86.0, "ene": 87.0},
-    "GRO": {"con": 83.2, "tra": 85.0, "men": 82.0, "réa": 86.2, "pré": 83.0, "nst": 85.0, "ene": 84.0},
+    "TFE": {"con": 89.2, "tra": 94.6, "men": 88.0, "réa": 87.4, "pré": 94.4, "nst": 89.4, "ene": 88.4},
+    "CON": {"con": 89.0, "tra": 88.0, "men": 89.0, "réa": 88.0, "pré": 88.0, "nst": 89.2, "ene": 89.0},
+    "GAI": {"con": 81.0, "tra": 99.8, "men": 81.5, "réa": 82.9, "pré": 83.0, "nst": 81.0, "ene": 82.0},
+    "HUL": {"con": 89.1, "tra": 87.2, "men": 87.3, "réa": 87.6, "pré": 88.1, "nst": 87.1, "ene": 88.0},
+    "BEL": {"con": 88.4, "tra": 88.2, "men": 88.2, "réa": 88.4, "pré": 88.6, "nst": 87.0, "ene": 88.0},
+    "PRO": {"con": 85.0, "tra": 84.0, "men": 86.0, "réa": 85.0, "pré": 84.4, "nst": 84.0, "ene": 84.6},
+    "NUN": {"con": 85.4, "tra": 88.0, "men": 85.0, "réa": 86.0, "pré": 86.8, "nst": 85.2, "ene": 85.0},
+    "BIL": {"con": 86.6, "tra": 86.4, "men": 86.6, "réa": 86.0, "pré": 85.8, "nst": 86.6, "ene": 86.6},
+    "NIT": {"con": 84.8, "tra": 89.6, "men": 82.0, "réa": 82.0, "pré": 83.4, "nst": 82.0, "ene": 83.6},
+    "DIA": {"con": 88.0, "tra": 91.0, "men": 88.0, "réa": 86.2, "pré": 84.0, "nst": 84.0, "ene": 84.0},
+    "THE": {"con": 90.0, "tra": 90.0, "men": 87.0, "réa": 87.0, "pré": 88.0, "nst": 86.0, "ene": 87.0},
+    "GRO": {"con": 83.2, "tra": 86.0, "men": 82.0, "réa": 86.2, "pré": 84.0, "nst": 85.0, "ene": 84.0},
+    "MED": {"con": 89.6, "tra": 88.0, "men": 87.4, "réa": 88.0, "pré": 89.0, "nst": 89.2, "ene": 89.6},
 }
 # Dictionnaire des noms et prénoms6
 noms_prenoms = {
@@ -106,6 +107,7 @@ noms_prenoms = {
     "DIA": ("Zach", "Diaz", "Homme", "Formula One"),
     "THE": ("Tome", "Théo", "Homme", "Formula One"),
     "GRO": ("Alex", "Groël", "Homme", "Formula One"),
+    "MED": ("Léo", "Médo", "Homme", "Formula One"),
 }
 # Variable pour suivre l'état de la commande /up
 up_bloque = False
